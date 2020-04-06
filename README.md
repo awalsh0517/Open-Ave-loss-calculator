@@ -1,0 +1,1 @@
+# Open-Ave-loss-calculator
