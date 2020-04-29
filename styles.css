@@ -21,7 +21,7 @@
   padding: 23px 34px 19px 34px;
 }
 
-.contact-button .footer-text{
+.contact-button, .footer-text{
   font-weight: 400;
 }
 
@@ -30,12 +30,15 @@
 }
 
 .footer{
-  align-items: center;
   border-top: solid 1px #f0f0f0;
-  display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 95px;
+}
+
+.footer, .headerFlex{
+  align-items: center;
+  display: flex;
 }
 
 .footer-text{
@@ -48,14 +51,10 @@
 
 
 .headerFlex{
-  align-items: center;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 115px;
-  margin-right: 115px;
-  padding-bottom: 4.5%;
-  padding-top: 3.5%;
+  margin: 0px 115px;
+  padding: 3.5% 0 4.5% 0;
 }
 
 .headerSocialWidth {
