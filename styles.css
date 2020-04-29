@@ -1,142 +1,32 @@
-body {
-  font-family: Arial;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-transform: none;
-  line-height: 1.1em;
-}
-
-title {
-  font-size: 34 px;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 200;
-  font-style: normal;
-  letter-spacing: .1em;
-  line-Height: 1.3em;
-  text-transform: uppercase;
-  color: #0c1155;
-  text-align: center;
-  white-space: pre-wrap;
-  text-decoration: none;
-}
-
-#navFormat {
-  padding: 20px 10px;
-}
-
-.sidenav {
-  font-family: 'Roboto', sans-serif;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: white;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 20%;
-}
-
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color:black;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidenav a:hover {
-  color: grey;
-}
-
-.sidenav .closebtn {
-  position: right;
-  top: 0;
-  right: 25px;
-  font-size: 40px;
-  margin-left: 50px;
-}
-
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
-
-/*.imageCenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 45%;
-} 
-*/
-
-.socialMedia {
-  max-width: 30px;
-  max-height: 30px;
-  padding: 5px;
 }
 
 .border {
   border: 1px solid black;
 }
 
-.headerFlex{
-  display: flex;
-  flex-direction: row;
-  padding-top: 3.5%;
-  padding-bottom: 4.5%;
-  justify-content: space-between;
-  align-items: center;
-  margin-left: 115px;
-  margin-right: 115px;
-}
-
-.verticalSeparator {
-  border-left: 1px solid lightslategray;
-  height: 30px;
-  position: absolute;
-  padding-left: 20px;
-  margin-left: 20px;
-
-}
-
-.headerSocialWidth {
-  width: 200px;
-}
-
-.openAveLogo {
-  margin-left: 10%;
-}
-
 .contact-button{
   background-color: #4768AE;
   border-radius: 3px;
   box-shadow: 0 2px 0 0 #3b5691;
-  cursor: pointer;
   color: #fff;
+  cursor: pointer;
   font-family: 'Roboto Mono', sans-serif;
   font-size: 15px;
-  font-weight: 400;
   height: 20px;
   letter-spacing: 0.13em;
   margin: 11px 0 0 -15px;
   padding: 23px 34px 19px 34px;
 }
 
-.contact-button:hover{
-  background-color: #4e6fb7;
+.contact-button .footer-text{
+  font-weight: 400;
 }
 
-.footer-text{
-  color: #333;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 0em;
-  margin: 7px 0 100px -15px
+.contact-button:hover{
+  background-color: #4e6fb7;
 }
 
 .footer{
@@ -146,4 +36,85 @@ title {
   flex-direction: column;
   justify-content: center;
   padding: 95px;
+}
+
+.footer-text{
+  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0em;
+  margin: 7px 0 100px -15px
+}
+
+
+.headerFlex{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 115px;
+  margin-right: 115px;
+  padding-bottom: 4.5%;
+  padding-top: 3.5%;
+}
+
+.headerSocialWidth {
+  width: 200px;
+}
+
+#navFormat {
+  padding: 20px 10px;
+}
+
+.openAveLogo {
+  margin-left: 10%;
+}
+
+.sidenav {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20%;
+  position: fixed;
+  top: 0;
+  transition: 0.5s;
+  width: 0;
+  z-index: 1;
+}
+
+.sidenav a {
+  color:black;
+  display: block;
+  font-size: 25px;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: grey;
+}
+
+.sidenav .closebtn {
+  font-size: 40px;
+  margin-left: 50px;
+  position: right;
+  right: 25px;
+  top: 0;
+}
+
+.socialMedia {
+  height: 30px;
+  padding: 5px;
+  width: 30px;
+}
+
+.verticalSeparator {
+  border-left: 1px solid #f0f0f0;
+  height: 30px;
+  margin-left: 20px;
+  position: absolute;
+  padding-left: 20px;
 }
