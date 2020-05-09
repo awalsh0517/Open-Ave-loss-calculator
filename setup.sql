@@ -150,6 +150,7 @@ INSERT INTO jobPostingFees (service, cost) VALUES ("Workable", 198);
 INSERT INTO jobPostingFees (service, cost) VALUES ("Proven", 203);
 INSERT INTO jobPostingFees (service, cost) VALUES ("ZipRecruiter", 178);
 
+
 INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Position Description", 2, 1);
 INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Posting & Marketing", 5, 1);
 INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Resume Screening", 15, 1);
