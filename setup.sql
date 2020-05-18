@@ -1,3 +1,4 @@
+DROP DATABASE openAve;
 CREATE DATABASE openAve;
 
 CREATE USER "openAve"@"localhost" IDENTIFIED BY "C0$tL0$$C4lc";
@@ -6,10 +7,13 @@ GRANT ALL ON openAve.* TO "openAve"@"localhost";
 
 USE openAve;
 
-CREATE TABLE avgSigningBonus (
+CREATE TABLE avgSigningBonuses (
   id INT auto_increment,
   companyName VARCHAR(255),
   cost INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -18,6 +22,9 @@ CREATE TABLE averageRecruiterFees (
   majorDiscipline VARCHAR(255),
   avgFeePercent DECIMAL(3,2),
   avgSalary INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -25,14 +32,20 @@ CREATE TABLE jobPostingFees (
   id INT auto_increment,
   service VARCHAR(255),
   cost INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
-CREATE TABLE OAFProgramPricing (
+CREATE TABLE OAFProgramPricings (
   id INT auto_increment,
   feeName VARCHAR(255),
   feeValue INT,
   feeRecurrsions INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -40,6 +53,9 @@ CREATE TABLE miscFixedCosts (
   id INT auto_increment,
   name VARCHAR(255),
   cost INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -47,17 +63,22 @@ CREATE TABLE miscVariableCosts (
   id INT auto_increment,
   name VARCHAR(255),
   percentCost DECIMAL(3,2),
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
 CREATE TABLE userInputs (
   id INT auto_increment,
+  userEmail VARCHAR(255),
+  userFullName VARCHAR(255),
   timePeriodStart DATE,
   timePeriodEnd DATE,
   companyIndustry VARCHAR(255),
-  eirOccSpec VARCHAR(255),
-  eirJobTitle VARCHAR(255),
-  laborNAICSCose VARCHAR(255),
+  EIROccSpec VARCHAR(255),
+  EIRJobTitle VARCHAR(255),
+  laborNAICSCode VARCHAR(255),
   DOLAnnualSalary DECIMAL(8,2),
   DOLHourlySalary DECIMAL(6,2),
   weeklyHours INT,
@@ -66,6 +87,9 @@ CREATE TABLE userInputs (
   isExternalRecruiterUsed TINYINT,
   isOfferedSigningBonus TINYINT,
   isOfferedRelocationBonus TINYINT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id)
 );
 
@@ -74,6 +98,9 @@ CREATE TABLE salaries (
   id INT auto_increment,
   title VARCHAR(255),
   hourlyRate DECIMAL(6,2),
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY(id)
 );
 
@@ -83,42 +110,45 @@ CREATE TABLE internalPersonnelTasks (
   name VARCHAR(255) NOT NULL,
   hoursSpent INT,
   titleID INT,
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  deletedAt DATETIME,
   PRIMARY KEY (id),
   FOREIGN KEY (titleID) REFERENCES salaries(id)
 );
 
-INSERT INTO OAFProgramPricing (feeName, FeeValue, FeeRecurrsions) VALUES  ("Legal", 5710, 1);
-INSERT INTO OAFProgramPricing (feeName, FeeValue, FeeRecurrsions) VALUES  ("Programmtic", 1300, 12);
+INSERT INTO OAFProgramPricings (feeName, FeeValue, FeeRecurrsions) VALUES  ("Legal", 5710, 1);
+INSERT INTO OAFProgramPricings (feeName, FeeValue, FeeRecurrsions) VALUES  ("Programmtic", 1300, 12);
 
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Facebook", 45708);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Amazon", 41340);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Pinterest", 33376);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Dropbox", 32833);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Twitter", 26144);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Salesforce", 28314);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Fitbit", 25459);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Google", 27547);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Apple", 27201);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Airbnb", 23250);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Snap", 23705);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Vmware", 18851);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("LinkedIn", 25418);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Microsoft", 20191);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Pandora", 18886);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Square", 17996);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Arista Network", 18652);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Spotify", 22492);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Tesla Motors", 19447);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Capital One", 8568);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Hewlett Packard Enterprise", 8265);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Oculus VR", 6926);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Uber", 1807);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("Netflix", 2520);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("CSRA", 1186);
-INSERT INTO avgSigningBonus (companyName, cost) VALUES ("UnitedHealth Group", 118);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Facebook", 45708);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Amazon", 41340);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Pinterest", 33376);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Dropbox", 32833);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Twitter", 26144);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Salesforce", 28314);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Fitbit", 25459);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Google", 27547);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Apple", 27201);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Airbnb", 23250);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Snap", 23705);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Vmware", 18851);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("LinkedIn", 25418);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Microsoft", 20191);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Pandora", 18886);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Square", 17996);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Arista Network", 18652);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Spotify", 22492);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Tesla Motors", 19447);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Capital One", 8568);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Hewlett Packard Enterprise", 8265);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Oculus VR", 6926);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Uber", 1807);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("Netflix", 2520);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("CSRA", 1186);
+INSERT INTO avgSigningBonuses (companyName, cost) VALUES ("UnitedHealth Group", 118);
 
-INSERT INTO miscVariableCosts (name, percentCost) VALUES ("Employee Prodcutivity", 0.15);
-INSERT INTO miscVariableCosts (name, percentCost) VALUES ("Vacany Percentage", 0.45);
+INSERT INTO miscVariableCosts (name, percentCost) VALUES ("Employee Productivity", 0.15);
+INSERT INTO miscVariableCosts (name, percentCost) VALUES ("Vacant Percentage", 0.45);
 
 INSERT INTO miscFixedCosts (name, cost) VALUES ("Average Relocation Bonus", 21000);
 
