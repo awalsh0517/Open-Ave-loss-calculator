@@ -54,46 +54,100 @@
   <div>
     <form class="informationForm" action="">
       <h1>Information</h1>
-      <div class="tab">
-        <div class="formField">
-          <label for="name">Name</label>
-          <input class="formStretch" type="text" name="info1" id="name" value="name"><br>
-        </div>
-        <div class="formField">
-          <label for="email">Email</label>
-          <input class="formStretch" type="text" name="info1" id="email" value="email"><br>
-        </div>
-        <div class="formField">
-          <label for="timePeriod">TimePeriod</label>
-          <input type="text" name="info1" id="timePeriod" value="timePeriod">
-          <label for="to">To</label>
-          <input type="text" name="info1" id="to" value="to"><br>
-        </div>
+      <!-- <div class="tab"> -->
+      <div class="formField">
+        <label for="name">Name</label>
+        <input type="text" name="info1" id="name" value=""><br>
       </div>
-  </div>
-  <div class="formCircles">
-    <span class="step"></span>
-    <span class="step"></span>
-    <span class="step"></span>
-  </div>
-  <div class="buttonsForForm">
-    <button class="formButton" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-    <button class="formButton" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
-  </div>
+      <div class="formField">
+        <label for="email">Email</label>
+        <input type="email" name="info1" id="email" value=""><br>
+      </div>
+      <div class="formField">
+        <label id="timPeriodLabel" for="timePeriod">Time Period</label>
+        <input id="startDateInput" class="timeWorkPeriod" type="date" name="info1" id="timePeriod" value="Start Date">
+        <input id="endDateInput" class="timeWorkPeriod" type="date" name="info1" id="to" value="End Date"><br>
+      </div>
+      <div class="formField">
+        <label for="companyIndustry">Company Industry</label>
+        <input type="text" name="info1" id="companyIndustry" value=""><br>
+      </div>
+      <div class="formField">
+        <label for="dolAnnualSalary">DOL Annual Salary</label>
+        <input type="text" name="info1" id="dolAnnualSalary" value="$0.00"><br>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="tab"> -->
+      <div class="formField">
+        <label for="residenceDegree">Expert in Residence Degree</label>
+        <input type="text" name="info1" id="residenceDegree" value=""><br>
+      </div>
+      <div class="formField">
+        <label for="residenceJobTitle">Expert in Residence Job Title</label>
+        <input type="text" name="info1" id="residenceJobTitle" value=""><br>
+      </div>
+      <div class="formField">
+        <label for="occupationalSpecialty">Expert in Residence Occupational Specialty</label>
+        <input type="text" name="info1" id="occupationalSpecialty" value=""><br>
+      </div>
+      <div class="formField">
+        <label for="laborNaicsCode">Labor NAICS Code</label>
+        <input type="text" name="info1" id="laborNaicsCode" value=""><br>
+      </div>
+      <div class="formField">
+        <label for="oesSocCode">OES/SOC Code</label>
+        <input type="text" name="info1" id="oesSocCode" value=""><br>
+      </div>
+      <!-- </div> -->
+      <!-- <div class="tab"> -->
+      <div class="formField">
+        <label for="corporateRecruiter">Is the employer using an external corporate recruiter?</label>
+        <select name="info1" id="corporateRecruiter" value="corporateRecruiter">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select><br>
+      </div>
+      <div class="formField">
+        <label for="signOnBonus">Is the employer offering a sign on bonus?</label>
+        <select name="info1" id="signOnBonus" value="signOnBonus">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select><br>
+      </div>
+      <div class="formField">
+        <label for="relocationBonus">Is the employer offering a relocation bonus?</label>
+        <select name="info1" id="relocationBonus" value="relocationBonus">
+          <option value="no">No</option>
+          <option value="yes">Yes</option>
+        </select><br>
+      </div>
+      <!-- </div> -->
+      <div class="formCircles">
+        <span class="step"></span>
+        <span class="step"></span>
+        <!-- <span class="step"></span> -->
+      </div>
+      <div class="formSubmit">
+        <button class="formSubmitButton" type="button" id="submitButton" onclick="submit">Submit</button>
+      </div>
+      <!-- <div class="buttonsForForm">
+        <button class="formButton" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+        <button class="formButton" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+      </div> -->
 
 
-  </form>
+    </form>
 
 
-  <footer class="footer">
-    <div class="footer-text">
-      Connect with us.
-    </div>
-    <div class="contact-button">
-      CONTACT US
-    </div>
+    <footer class="footer">
+      <div class="footer-text">
+        Connect with us.
+      </div>
+      <div class="contact-button">
+        CONTACT US
+      </div>
 
-  </footer>
+    </footer>
 
 
 
