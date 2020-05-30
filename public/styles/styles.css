@@ -145,7 +145,7 @@
   overflow: auto;
 }
 
-.formButton {
+.formSubmitButton {
   margin-left: 1%;
   float: right;
   padding: 5px 10px;
@@ -158,12 +158,13 @@
 }
 
 .informationForm {
-  background-color: #ffffff;
+  background-color: rgba(160, 177, 214, .3);
+  /* background-color: #ffffff; */
   margin: auto;
   padding: 40px;
-  margin: 3% 9% 1% 9%;
+  margin: 3% 20% 1% 20%;
   min-width: 300px;
-  border: 1px solid black;
+  border: 1px solid rgba(160, 177, 214, .5);
   border-radius: 10px;
   text-align: center;
 }
@@ -175,24 +176,46 @@
 .formField {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  
+  justify-content: space-evenly;  
 }
 input {
+  width: 300px;
   padding: 10px;
-  font-size: 17px;
-  border: 1px solid #aaaaaa;
+  font-size:11px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 label {
-  text-align: right;
-  padding: 5px;
+  width: 300px;
+  text-align: left;
+  padding: 10px;
   font-size: 17px;
+  font-weight: 500;
+  margin-top: 15px;
 }
 
-.formStretch {
-  padding-right: 25px;
-  width: 45%;
+select {
+  width: 300px;
+  margin-top: 15px;
+  height: 35px;
+  font-size: 15px;
+}
+
+#timPeriodLabel {
+  margin-left: 4%;
+}
+
+#startDateInput {
+  margin-left: 5%;
+  width: 140px;
+}
+
+#endDateInput {
+  margin-right: 9%;
+  margin-left: 2%;
+  width: 140px;
 }
 
 .formCircles {
