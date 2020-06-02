@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Form from './Form'
+import displayViewKeys from './displayViewKeys'
 
 export default () => {
   const [salaries, setSalaries] = useState([])
+  const [viewState, setViewState] = useState()
+
+  const handleChangeView = (targetState) => {
+    setViewState(targetState)
+  }
 
   useEffect(() => {
     async function pullData() {
@@ -38,9 +44,9 @@ export default () => {
   return (
     <div>
       <Form />
-      {
+      {/* {
         salaries.map(salary => (<div>{`${salary.title}`}</div>))
-      }
+      } */}
 
     </div>
 

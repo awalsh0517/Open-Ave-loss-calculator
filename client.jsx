@@ -4,7 +4,7 @@ import Display from './components/Display'
 
 render(
   <div>
-    <div id="mySidenav" className="sidenav">
+    {/* <div id="mySidenav" className="sidenav">
       <a href="javascript:void(0)" className="closebtn" onClick="closeNav()">&times;</a>
 
       <div id="navFormat"><a href="#">Home</a></div>
@@ -44,7 +44,7 @@ render(
 
     <div className="betweenTitleAndForm">
       <p> Give us some information about your employee and company.</p>
-    </div>
+    </div> */}
 
     <Display />
 
@@ -52,13 +52,13 @@ render(
     <footer className="footer">
       <div className="footer-text">
         Connect with us.
-        </div>
+      </div>
       <div className="contact-button">
         CONTACT US
-        </div>
+      </div>
 
     </footer>
 
-  </div >,
+  </div>,
   document.getElementById('root'),
 )
