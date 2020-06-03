@@ -1,52 +1,67 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useState, useReducer } from 'react'
 import Form from './Form'
+import Review from './Review'
+import Success from './Success'
 import displayViewKeys from './displayViewKeys'
+import formActions from './formActions'
+
+const initialState = {
+  inputs: {
+    name: '',
+    email: '',
+    startDate: '',
+    endDate: '',
+    companyIndustry: '',
+    dolAnnualSalary: '0',
+    residenceDegree: '',
+    occupationalSpecialty: '',
+    laborNaicsCode: '',
+    oesSocCode: '',
+    corporateRecruiter: '',
+    signOnBonus: '',
+    relocationBonus: '',
+  },
+}
+
+const reducer = (state, { type, payload }) => {
+  switch (type) {
+    case formActions.INPUT_CHANGE:
+      return {
+        ...state,
+        inputs: {
+          ...state.inputs,
+          [payload.name]: payload.value,
+        },
+      }
+
+    default:
+      return state
+  }
+}
 
 export default () => {
-  const [salaries, setSalaries] = useState([])
-  const [viewState, setViewState] = useState()
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const [viewState, setViewState] = useState(displayViewKeys.FORM)
 
   const handleChangeView = (targetState) => {
     setViewState(targetState)
   }
 
-  useEffect(() => {
-    async function pullData() {
-      const { data } = await axios.get('http://localhost:1337/salaries')
-
-      setSalaries(data)
-    }
-    pullData()
-
-    // const postUserData = async () => {
-    //   await axios.post('http://localhost:1337/userInputs', {
-    //     name: 'Rob Perron',
-    //     email: 'blah@gmail.com',
-    //     timeStart: '10/10/10',
-    //     timeEnd: '11/11/11',
-    //     companyIndustry: 'Climbing',
-    //     annualSalaryDOL: 30000,
-    //     eirDegree: 'idk',
-    //     eirJobTitle: 'idk',
-    //     eirOccupationalSpecialty: 'idk',
-    //     laborNaicsCode: '24601',
-    //     oesSocCode: '24601',
-    //     isExternalRecruiter: 0,
-    //     isSignOnBonus: 0,
-    //     isRelocationBonusOffered: 1,
-    //   })
-    // }
-
-    // postUserData()
-  }, [])
-
   return (
     <div>
-      <Form />
-      {/* {
-        salaries.map(salary => (<div>{`${salary.title}`}</div>))
-      } */}
+      {
+        viewState === displayViewKeys.FORM &&
+        <Form handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
+      }
+      {
+        viewState === displayViewKeys.REVIEW &&
+        <Review state={state} />
+      }
+      {
+        viewState === displayViewKeys.SUCCESS &&
+        <Success />
+      }
 
     </div>
 
