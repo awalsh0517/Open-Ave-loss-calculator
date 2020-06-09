@@ -40,7 +40,7 @@ render(
       <div>
         <p>
           Find out how much you could save with
-          <span className="bold">Open Avenues</span>
+          <span className="bold"> Open Avenues</span>
         </p>
       </div>
     </div>

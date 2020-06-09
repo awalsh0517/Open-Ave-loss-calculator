@@ -1,5 +1,9 @@
 import React, { useState, useReducer } from 'react'
 import Form from './Form'
+import Form2 from './Form2'
+import Form3 from './Form3'
+import Form4 from './Form4'
+import Form5 from './Form5'
 import Review from './Review'
 import Success from './Success'
 import displayViewKeys from './displayViewKeys'
@@ -20,6 +24,20 @@ const initialState = {
     corporateRecruiter: '',
     signOnBonus: '',
     relocationBonus: '',
+    corporateRecruiterPersonnel: '',
+    directorEngineering: '',
+    itTechnician: '',
+    humanResourcesManager: '',
+    ceo: '',
+    peerWorker: '',
+    staffMorale: '',
+    lostCustomers: '',
+    daysVacant: '',
+    unemployementTaxIncrease: '',
+    legalClaims: '',
+    travelRegistrationFees: '',
+    outsideTrainer: '',
+    workshopMaterials: '',
   },
 }
 
@@ -55,8 +73,24 @@ export default () => {
         <Form handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
       }
       {
+        viewState === displayViewKeys.FORM2 &&
+        <Form2 handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
+      }
+      {
+        viewState === displayViewKeys.FORM3 &&
+        <Form3 handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
+      }
+      {
+        viewState === displayViewKeys.FORM4 &&
+        <Form4 handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
+      }
+      {
+        viewState === displayViewKeys.FORM5 &&
+        <Form5 handleChangeView={handleChangeView} state={state} dispatch={dispatch} />
+      }
+      {
         viewState === displayViewKeys.REVIEW &&
-        <Review state={state} />
+        <Review handleChangeView={handleChangeView} state={state} />
       }
       {
         viewState === displayViewKeys.SUCCESS &&

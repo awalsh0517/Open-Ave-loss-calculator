@@ -139,14 +139,7 @@
   font-weight: 700;
 }
 
-.buttonsForForm {
-  margin-right: 9%;
-  margin-bottom: 3%;
-  overflow: auto;
-}
-
 .formSubmitButton {
-  margin-left: 1%;
   float: right;
   padding: 5px 10px;
   border-radius: 10px;
@@ -155,11 +148,11 @@
   background-color: #4e6fb7;
   color: white;
   font-weight: 400;
+  margin-top: 20px;
 }
 
 .informationForm {
   background-color: rgba(160, 177, 214, .3);
-  /* background-color: #ffffff; */
   margin: auto;
   padding: 40px;
   margin: 3% 20% 1% 20%;
@@ -167,6 +160,7 @@
   border: 1px solid rgba(160, 177, 214, .5);
   border-radius: 10px;
   text-align: center;
+  padding-bottom: 70px;
 }
 
 .informationForm * {
@@ -178,6 +172,7 @@
   flex-wrap: wrap;
   justify-content: space-evenly;  
 }
+
 input {
   width: 300px;
   padding: 10px;
@@ -203,25 +198,10 @@ select {
   font-size: 15px;
 }
 
-#timPeriodLabel {
-  margin-left: 4%;
-}
-
-#startDateInput {
-  margin-left: 5%;
-  width: 140px;
-}
-
-#endDateInput {
-  margin-right: 9%;
-  margin-left: 2%;
-  width: 140px;
-}
-
-.formCircles {
+/* .formCircles {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .step {
@@ -240,4 +220,25 @@ select {
 
 .step.finish {
   background-color: #4CAF50;
+} */
+
+/* .buttonsForForm {
+  margin-right: 9%;
+  margin-bottom: 3%;
+  overflow: auto;
+} */
+
+/* #timPeriodLabel {
+  margin-left: 4%;
 }
+
+#startDateInput {
+  margin-left: 5%;
+  width: 140px;
+}
+
+#endDateInput {
+  margin-right: 9%;
+  margin-left: 2%;
+  width: 140px;
+} */
