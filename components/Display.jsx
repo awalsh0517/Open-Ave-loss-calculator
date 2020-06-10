@@ -94,7 +94,7 @@ export default () => {
       }
       {
         viewState === displayViewKeys.SUCCESS &&
-        <Success />
+        <Success handleChangeView={handleChangeView} state={state} />
       }
 
     </div>
