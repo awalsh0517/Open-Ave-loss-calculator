@@ -16,7 +16,7 @@ const initialState = {
     startDate: '',
     endDate: '',
     companyIndustry: '',
-    dolAnnualSalary: '0',
+    dolAnnualSalary: '',
     residenceDegree: '',
     occupationalSpecialty: '',
     laborNaicsCode: '',

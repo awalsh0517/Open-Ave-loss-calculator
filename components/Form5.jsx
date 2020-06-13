@@ -25,6 +25,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What are the cost of travel and registration fees for training?"
           name="travelRegistrationFees"
           value={state.inputs.travelRegistrationFees}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -32,6 +33,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What are the costs if you use an outside trainer?"
           name="outsideTrainer"
           value={state.inputs.outsideTrainer}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -39,6 +41,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What are the costs of any workshop materials related to outside training?"
           name="workshopMaterials"
           value={state.inputs.workshopMaterials}
+          placeholder="$0.00"
         />
         <button
           className="formSubmitButton"

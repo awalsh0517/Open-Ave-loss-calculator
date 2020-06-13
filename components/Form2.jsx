@@ -50,8 +50,8 @@ export default ({ handleChangeView, state, dispatch }) => {
           event.preventDefault()
         }}
       >
-        <h1>Personnel Costs</h1>
-        <h2>Are you?</h2>
+        <h1>Information Continued</h1>
+        <h2>Tell us about the employee.</h2>
 
         <Input
           dispatch={dispatch}
@@ -59,6 +59,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="Labor NAICS Code"
           name="laborNaicsCode"
           value={state.inputs.laborNaicsCode}
+          placeholder="xxxxxx"
         />
         <Input
           dispatch={dispatch}
@@ -66,6 +67,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="OES SOC Code"
           name="oesSocCode"
           value={state.inputs.oesSocCode}
+          placeholder="xx-xxxx"
         />
         <Input
           dispatch={dispatch}

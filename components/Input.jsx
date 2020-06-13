@@ -13,6 +13,7 @@ export default ({
   options,
   type = 'text',
   value,
+  placeholder,
 }) => {
   const handleChange = (event) => {
     const payload = {
@@ -28,7 +29,7 @@ export default ({
       {
         isTypeTextLike(type) && (
           <>
-            <input type={type} name={name} value={value} onChange={handleChange} id={id} />
+            <input placeholder={placeholder} type={type} name={name} value={value} onChange={handleChange} id={id} />
           </>
         )
       }

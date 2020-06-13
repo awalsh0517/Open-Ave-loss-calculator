@@ -148,14 +148,14 @@
   background-color: #4e6fb7;
   color: white;
   font-weight: 400;
-  margin-top: 20px;
+  margin: 2% 5% 0% 0%;
 }
 
 .informationForm {
   background-color: rgba(160, 177, 214, .3);
   margin: auto;
   padding: 40px;
-  margin: 3% 20% 1% 20%;
+  margin: 3% 20% 12% 20%;
   min-width: 300px;
   border: 1px solid rgba(160, 177, 214, .5);
   border-radius: 10px;
@@ -167,10 +167,12 @@
   box-sizing: border-box;
 }
 
-.formField {
+.formField, .reviewField {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;  
+  justify-content: space-evenly;
+  padding-bottom: 5px;
+  
 }
 
 input {
@@ -193,9 +195,31 @@ label {
 
 select {
   width: 300px;
-  margin-top: 15px;
+  margin-top: 20px;
   height: 35px;
   font-size: 15px;
+}
+
+.review_text {
+  width: 300px;
+  text-align: left;
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+.reviewField {
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(160, 177, 214, .1);
+  width: 610px;
+  margin: 0 auto;
+}
+
+.review_response {
+  padding-left:50px;
+}
+
+#reviewh2 {
+  margin-bottom: 35px;
 }
 
 /* .formCircles {

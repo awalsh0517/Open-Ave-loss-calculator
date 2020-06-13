@@ -16,6 +16,7 @@ export default ({ handleChangeView, state, dispatch }) => {
         }}
       >
         <h1>Information</h1>
+        <h2>Tell us about the employee.</h2>
 
         <Input
           dispatch={dispatch}
@@ -23,6 +24,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="Name"
           name="name"
           value={state.inputs.name}
+          placeholder="First and Last Name"
         />
         <Input
           dispatch={dispatch}
@@ -31,6 +33,8 @@ export default ({ handleChangeView, state, dispatch }) => {
           name="email"
           type="email"
           value={state.inputs.email}
+          placeholder="example@example.com"
+
         />
         <Input
           dispatch={dispatch}
@@ -54,6 +58,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="Company Industry"
           name="companyIndustry"
           value={state.inputs.companyIndustry}
+          placeholder="example: Ecommerce"
         />
         <Input
           dispatch={dispatch}
@@ -61,6 +66,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="DOL Annual Salary"
           name="dolAnnualSalary"
           value={state.inputs.dolAnnualSalary}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -68,6 +74,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="Residence Degree"
           name="residenceDegree"
           value={state.inputs.residenceDegree}
+          placeholder="example: Computer Science"
         />
         <Input
           dispatch={dispatch}
@@ -75,6 +82,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="Occupational Specialty"
           name="occupationalSpecialty"
           value={state.inputs.occupationalSpecialty}
+          placeholder="example: Front-end Engineer"
         />
         <button
           className="formSubmitButton"

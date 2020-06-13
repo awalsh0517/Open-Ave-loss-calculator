@@ -26,6 +26,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What is the lost cost due to staff morale?"
           name="staffMorale"
           value={state.inputs.staffMorale}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -33,6 +34,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What is the lost cost due to lost customers?"
           name="lostCustomers"
           value={state.inputs.lostCustomers}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -40,6 +42,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What is the average days the position will be vacant?"
           name="daysVacant"
           value={state.inputs.daysVacant}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -47,6 +50,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="How much will your unemployement tax increase?"
           name="unemployementTaxIncrease"
           value={state.inputs.unemployementTaxIncrease}
+          placeholder="$0.00"
         />
         <Input
           dispatch={dispatch}
@@ -54,6 +58,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What are the potental cost due to legal claims?"
           name="legalClaims"
           value={state.inputs.legalClaims}
+          placeholder="$0.00"
         />
         <button
           className="formSubmitButton"

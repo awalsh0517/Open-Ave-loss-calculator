@@ -84,7 +84,7 @@ export default ({ handleChangeView, state, dispatch }) => {
         }}
       >
         <h1>Personnel Costs</h1>
-        <h2>Are you?</h2>
+        <h2>Who was involved in the hiring process?</h2>
 
         <Input
           dispatch={dispatch}
