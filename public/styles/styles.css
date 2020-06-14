@@ -139,14 +139,7 @@
   font-weight: 700;
 }
 
-.buttonsForForm {
-  margin-right: 9%;
-  margin-bottom: 3%;
-  overflow: auto;
-}
-
-.formButton {
-  margin-left: 1%;
+.formSubmitButton {
   float: right;
   padding: 5px 10px;
   border-radius: 10px;
@@ -155,50 +148,84 @@
   background-color: #4e6fb7;
   color: white;
   font-weight: 400;
+  margin: 2% 5% 0% 0%;
 }
 
 .informationForm {
-  background-color: #ffffff;
+  background-color: rgba(160, 177, 214, .3);
   margin: auto;
   padding: 40px;
-  margin: 3% 9% 1% 9%;
+  margin: 3% 20% 12% 20%;
   min-width: 300px;
-  border: 1px solid black;
+  border: 1px solid rgba(160, 177, 214, .5);
   border-radius: 10px;
   text-align: center;
+  padding-bottom: 70px;
 }
 
 .informationForm * {
   box-sizing: border-box;
 }
 
-.formField {
+.formField, .reviewField {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  justify-content: space-evenly;
+  padding-bottom: 5px;
   
 }
+
 input {
+  width: 300px;
   padding: 10px;
-  font-size: 17px;
-  border: 1px solid #aaaaaa;
+  font-size:11px;
+  margin-top: 15px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 label {
-  text-align: right;
-  padding: 5px;
+  width: 300px;
+  text-align: left;
+  padding: 10px;
   font-size: 17px;
+  font-weight: 500;
+  margin-top: 15px;
 }
 
-.formStretch {
-  padding-right: 25px;
-  width: 45%;
+select {
+  width: 300px;
+  margin-top: 20px;
+  height: 35px;
+  font-size: 15px;
 }
 
-.formCircles {
+.review_text {
+  width: 300px;
+  text-align: left;
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+.reviewField {
+  margin-top: 10px;
+  border-bottom: 1px solid rgba(160, 177, 214, .1);
+  width: 610px;
+  margin: 0 auto;
+}
+
+.review_response {
+  padding-left:50px;
+}
+
+#reviewh2 {
+  margin-bottom: 35px;
+}
+
+/* .formCircles {
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 100px;
 }
 
 .step {
@@ -217,4 +244,25 @@ label {
 
 .step.finish {
   background-color: #4CAF50;
+} */
+
+/* .buttonsForForm {
+  margin-right: 9%;
+  margin-bottom: 3%;
+  overflow: auto;
+} */
+
+/* #timPeriodLabel {
+  margin-left: 4%;
 }
+
+#startDateInput {
+  margin-left: 5%;
+  width: 140px;
+}
+
+#endDateInput {
+  margin-right: 9%;
+  margin-left: 2%;
+  width: 140px;
+} */
