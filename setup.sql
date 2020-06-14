@@ -1,4 +1,3 @@
-DROP DATABASE openAve;
 CREATE DATABASE openAve;
 
 CREATE USER "openAve"@"localhost" IDENTIFIED BY "C0$tL0$$C4lc";
@@ -76,23 +75,37 @@ CREATE TABLE userInputs (
   timePeriodStart DATE,
   timePeriodEnd DATE,
   companyIndustry VARCHAR(255),
-  EIROccSpec VARCHAR(255),
-  EIRJobTitle VARCHAR(255),
-  laborNAICSCode VARCHAR(255),
+  EIROccSpec VARCHAR(255) DEFAULT NULL,
+  EIRJobTitle VARCHAR(255) DEFAULT NULL,
+  laborNAICSCode VARCHAR(255) DEFAULT NULL,
   DOLAnnualSalary DECIMAL(8,2),
-  DOLHourlySalary DECIMAL(6,2),
+  DOLHourlySalary DECIMAL(6,2) DEFAULT NULL,
   weeklyHours INT,
-  OESSOCCode VARCHAR(255),
-  EIRDegree VARCHAR(255),
-  isExternalRecruiterUsed TINYINT,
-  isOfferedSigningBonus TINYINT,
-  isOfferedRelocationBonus TINYINT,
+  OESSOCCode VARCHAR(255) DEFAULT NULL,
+  EIRDegree VARCHAR(255) DEFAULT NULL,
+  averageDaysVacant INT,
+  isExternalRecruiterUsed TINYINT DEFAULT NULL,
+  isOfferedSigningBonus TINYINT DEFAULT NULL,
+  isOfferedRelocationBonus TINYINT DEFAULT NULL,
+  isCorpRecuiterInvolved TINYINT DEFAULT NULL,
+  isDirOfEngineeringInvolved TINYINT DEFAULT NULL,
+  isItTechnicianInvolved TINYINT DEFAULT NULL,
+  isHrManagerInvolved TINYINT DEFAULT NULL,
+  isCeoInvolved TINYINT DEFAULT NULL,
+  isPeerWorkerInvolved TINYINT DEFAULT NULL,
+  estUnemployTaxInc DECIMAL(7,2) DEFAULT NULL,
+  possibleLegalClaimsCost DECIMAL(9,2) DEFAULT NULL,
+  staffMorale DECIMAL(9,2) DEFAULT NULL,
+  lostCustomers DECIMAL(9,2) DEFAULT NULL,
+  travelAndRegFees DECIMAL(7,2) DEFAULT NULL,
+  outsideTrainerCost DECIMAL(7,2) DEFAULT NULL,
+  outsourcedWork DECIMAL(7,2) DEFAULT NULL,
+  workShopMaterialCost DECIMAL(7,2) DEFAULT NULL,
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
   updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   deletedAt DATETIME,
   PRIMARY KEY (id)
 );
-
 
 CREATE TABLE salaries (
   id INT auto_increment,
@@ -152,7 +165,6 @@ INSERT INTO miscVariableCosts (name, percentCost) VALUES ("Vacant Percentage", 0
 
 INSERT INTO miscFixedCosts (name, cost) VALUES ("Average Relocation Bonus", 21000);
 
-
 INSERT INTO salaries (title, hourlyRate) VALUES ("Corporate Recruiter", 43.75);
 INSERT INTO salaries (title, hourlyRate) VALUES ("Director of Engineering - Hiring Manager", 113.85);
 INSERT INTO salaries (title, hourlyRate) VALUES ("IT Technician", 10.42);
@@ -179,7 +191,6 @@ INSERT INTO jobPostingFees (service, cost) VALUES ("Indeed", 300);
 INSERT INTO jobPostingFees (service, cost) VALUES ("Workable", 198);
 INSERT INTO jobPostingFees (service, cost) VALUES ("Proven", 203);
 INSERT INTO jobPostingFees (service, cost) VALUES ("ZipRecruiter", 178);
-
 
 INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Position Description", 2, 1);
 INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Posting & Marketing", 5, 1);
