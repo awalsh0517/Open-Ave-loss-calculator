@@ -1,5 +1,6 @@
 // import axios from 'axios'
 const { userInputSample } = require('../mocks/userInputs')
+const jobPostingFees = require('./jobPostingFees')
 
 const calculateExitDirectCosts = () => {
   const separationPay = (userInputSample.DOLAnnualSalary / 366) * 14
@@ -33,7 +34,7 @@ const calculateRnhDirectCosts = () => {
 
   if (userInputSample.isExternalRecruiterUsed === '1') externalRecruiterFee = userInputSample.DOLAnnualSalary * 0.22
 
-  const advertisingCosts = 4180
+  const advertisingCosts = jobPostingFees()
 
   if (userInputSample.isOfferedRelocationBonus === '1') relocationBonus = 21000
 
