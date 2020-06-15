@@ -8,9 +8,7 @@ const jobPostingFees = async () => {
   const jobPostingFeeTotal = await data.reduce((total, current) => {
     return current.cost ? total + current.cost : total + 0
   }, 0)
-
   return jobPostingFeeTotal
 }
-
 
 module.exports = jobPostingFees

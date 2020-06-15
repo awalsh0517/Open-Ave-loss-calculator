@@ -24,6 +24,12 @@ const getInternalPersonnelTasks = async () => {
   return internalPersonnelTasks
 }
 
+const getInternalPersonnelTasksWithSalaries = async (name) => {
+  const internalPersonnelTasks = await axios.get(`http://localhost:1337/internalPersonnelTasks/${name}`) // eslint-disable-line no-undef
+
+  return internalPersonnelTasks
+}
+
 const getJobPostingFees = async () => {
   const jobPostingFees = await axios.get('http://localhost:1337/jobPostingFees') // eslint-disable-line no-undef
 
@@ -31,7 +37,6 @@ const getJobPostingFees = async () => {
 }
 
 const getMiscFixedCosts = async () => {
-
   const { miscFixedCosts } = await axios.get('http://localhost:1337/miscFixedCosts') // eslint-disable-line no-undef
 
   return miscFixedCosts
@@ -59,6 +64,7 @@ module.exports = {
   getAverageRecruiterFees,
   getAvgSigningBonuses,
   getInternalPersonnelTasks,
+  getInternalPersonnelTasksWithSalaries,
   getJobPostingFees,
   getMiscFixedCosts,
   getMiscVariableCosts,

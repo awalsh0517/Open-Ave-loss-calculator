@@ -11,20 +11,31 @@ const userInputsModel = require('./userInputs')
 
 
 const connection = new Sequelize('openAve', 'openAve', 'C0$tL0$$C4lc', {
-  host: 'localhost', dialect: 'mysql'
+  host: 'localhost', dialect: 'mysql',
 })
 
-const averageRecruiterFees = averageRecruiterFeesModel(connection,Sequelize)
-const avgSigningBonuses = avgSigningBonusesModel(connection,Sequelize)
-const salaries = salariesModel(connection,Sequelize)
-const internalPersonnelTasks = internalPersonnelTasksModel(connection,Sequelize)
-const jobPostingFees = jobPostingFeesModel(connection,Sequelize)
-const miscFixedCosts = miscFixedCostsModel(connection,Sequelize)
-const miscVariableCosts = miscVariableCostsModel(connection,Sequelize)
-const OAFProgramPricings = OAFProgramPricingsModel(connection,Sequelize)
-const userInputs = userInputsModel(connection,Sequelize)
+const averageRecruiterFees = averageRecruiterFeesModel(connection, Sequelize)
+const avgSigningBonuses = avgSigningBonusesModel(connection, Sequelize)
+const salaries = salariesModel(connection, Sequelize)
+const internalPersonnelTasks = internalPersonnelTasksModel(connection, Sequelize)
+const jobPostingFees = jobPostingFeesModel(connection, Sequelize)
+const miscFixedCosts = miscFixedCostsModel(connection, Sequelize)
+const miscVariableCosts = miscVariableCostsModel(connection, Sequelize)
+const OAFProgramPricings = OAFProgramPricingsModel(connection, Sequelize)
+const userInputs = userInputsModel(connection, Sequelize)
 
 
+internalPersonnelTasks.belongsTo(salaries)
+salaries.hasMany(internalPersonnelTasks)
 
-
-module.exports = { averageRecruiterFees, avgSigningBonuses, salaries, internalPersonnelTasks, jobPostingFees, miscFixedCosts, miscVariableCosts, OAFProgramPricings, userInputs }
+module.exports = {
+  averageRecruiterFees,
+  avgSigningBonuses,
+  salaries,
+  internalPersonnelTasks,
+  jobPostingFees,
+  miscFixedCosts,
+  miscVariableCosts,
+  OAFProgramPricings,
+  userInputs,
+}
