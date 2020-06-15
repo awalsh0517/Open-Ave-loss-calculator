@@ -25,8 +25,8 @@ const OAFProgramPricings = OAFProgramPricingsModel(connection, Sequelize)
 const userInputs = userInputsModel(connection, Sequelize)
 
 
-internalPersonnelTasks.belongsTo(salaries)
 salaries.hasMany(internalPersonnelTasks)
+internalPersonnelTasks.belongsTo(salaries)
 
 module.exports = {
   averageRecruiterFees,

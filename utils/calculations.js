@@ -8,7 +8,12 @@ const calculateExitDirectCosts = (dolAnnualSalary) => {
   return separationPay
 }
 
-const calculateExitHiddenCosts = async (dolAnnualSalary, personnelUsed, unemployementTaxIncrease, legalClaims, staffMorale) => {
+const calculateExitHiddenCosts = async (
+  dolAnnualSalary,
+  personnelUsed,
+  unemployementTaxIncrease,
+  legalClaims,
+  staffMorale) => {
   const personnalTaskSalaries = await fetchInternalPersonnelTasksWithSalaries('Exit')
 
   let combinedSalaries = 0
@@ -107,7 +112,10 @@ const calculateRnhHiddenCosts = (dolAnnualSalary, daysVacant, lostCustomers) => 
   return totalRnhHiddenCosts
 }
 
-const calculateOnboardingDirectCosts = async (personnelUsed, travelRegistrationFees, outsideTrainer, workshopMaterials) => {
+const calculateOnboardingDirectCosts = async (personnelUsed,
+  travelRegistrationFees,
+  outsideTrainer,
+  workshopMaterials) => {
   const personnalTaskSalaries = await fetchInternalPersonnelTasksWithSalaries('OnBoarding')
   // const combinedSalaries = (4224 + 334)
 
@@ -196,16 +204,30 @@ const calculateSavings = async (state) => {
   }
 
   const ExitDirectCost = await calculateExitDirectCosts(dolAnnualSalary)
-  const ExitHiddenCost = await calculateExitHiddenCosts(dolAnnualSalary, personnelUsed, Number(unemployementTaxIncrease), Number(legalClaims), Number(staffMorale))
+  const ExitHiddenCost = await calculateExitHiddenCosts(dolAnnualSalary,
+    personnelUsed,
+    Number(unemployementTaxIncrease),
+    Number(legalClaims),
+    Number(staffMorale))
   const rnhDirectCost = await calculateRnhDirectCosts(personnelUsed, dolAnnualSalary)
   const rnhHiddenCost = await calculateRnhHiddenCosts(dolAnnualSalary, Number(daysVacant), Number(lostCustomers))
-  const onBoardingDirectCost = await calculateOnboardingDirectCosts(personnelUsed, Number(travelRegistrationFees), Number(outsideTrainer), Number(workshopMaterials))
+  const onBoardingDirectCost = await calculateOnboardingDirectCosts(personnelUsed,
+    Number(travelRegistrationFees),
+    Number(outsideTrainer),
+    Number(workshopMaterials))
   const onBoardingHiddenCost = await calculateOnboardingHiddenCosts(dolAnnualSalary, Number(daysVacant))
 
   const total = ExitDirectCost + ExitHiddenCost + rnhDirectCost + rnhHiddenCost +
     onBoardingDirectCost + onBoardingHiddenCost - 21310
 
-  return total.toFixed(2)
+  return {
+    total: total.toFixed(2),
+    ExitDirectCost: ExitDirectCost.toFixed(2),
+    ExitHiddenCost: ExitHiddenCost.toFixed(2),
+    rnhDirectCost: rnhDirectCost.toFixed(2),
+    rnhHiddenCost: rnhHiddenCost.toFixed(2),
+    onBoardingDirectCost: onBoardingDirectCost.toFixed(2),
+    onBoardingHiddenCost: onBoardingHiddenCost.toFixed(2),
+  }
 }
-
-export default calculateSavings
+module.exports = { calculateSavings }
