@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import ReactTable from 'react-table'
 import viewKeys from './displayViewKeys'
 
 import { calculateSavings } from '../utils/calculations'
