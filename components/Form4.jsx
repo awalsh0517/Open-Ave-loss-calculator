@@ -42,7 +42,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What is the average days the position will be vacant?"
           name="daysVacant"
           value={state.inputs.daysVacant}
-          placeholder="$0.00"
+          placeholder="0"
         />
         <Input
           dispatch={dispatch}
