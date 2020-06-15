@@ -60,6 +60,14 @@ export default ({ handleChangeView, state, dispatch }) => {
           value={state.inputs.legalClaims}
           placeholder="$0.00"
         />
+        <Input
+          dispatch={dispatch}
+          id="production_delays"
+          labelText="What are the potental cost due to production delays?"
+          name="productionDelays"
+          value={state.inputs.productionDelays}
+          placeholder="$0.00"
+        />
         <button
           className="formSubmitButton"
           type="button"
