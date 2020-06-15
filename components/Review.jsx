@@ -128,6 +128,10 @@ export default ({ handleChangeView, state }) => {
             <span className="review_text review_response">{state.inputs.legalClaims}</span>
           </div>
           <div className="reviewField">
+            <span className="review_text">What are the potental cost due to production delays?:</span>
+            <span className="review_text review_response">{state.inputs.productionDelays}</span>
+          </div>
+          <div className="reviewField">
             <span className="review_text">What are the cost of travel and registration fees for training?:</span>
             <span className="review_text review_response">{state.inputs.travelRegistrationFees}</span>
           </div>

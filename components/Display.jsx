@@ -35,6 +35,7 @@ const initialState = {
     daysVacant: '',
     unemployementTaxIncrease: '',
     legalClaims: '',
+    productionDelays: '',
     travelRegistrationFees: '',
     outsideTrainer: '',
     workshopMaterials: '',

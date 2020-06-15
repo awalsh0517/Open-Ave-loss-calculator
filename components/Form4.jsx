@@ -42,7 +42,7 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What is the average days the position will be vacant?"
           name="daysVacant"
           value={state.inputs.daysVacant}
-          placeholder="$0.00"
+          placeholder="0"
         />
         <Input
           dispatch={dispatch}
@@ -58,6 +58,14 @@ export default ({ handleChangeView, state, dispatch }) => {
           labelText="What are the potental cost due to legal claims?"
           name="legalClaims"
           value={state.inputs.legalClaims}
+          placeholder="$0.00"
+        />
+        <Input
+          dispatch={dispatch}
+          id="production_delays"
+          labelText="What are the potental cost due to production delays?"
+          name="productionDelays"
+          value={state.inputs.productionDelays}
           placeholder="$0.00"
         />
         <button
