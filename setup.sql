@@ -122,12 +122,12 @@ CREATE TABLE internalPersonnelTasks (
   taskGroup ENUM("Exit", "RnH", "OnBoarding"),
   name VARCHAR(255) NOT NULL,
   hoursSpent INT,
-  titleID INT,
+  salaryID INT,
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP,
   updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   deletedAt DATETIME,
   PRIMARY KEY (id),
-  FOREIGN KEY (titleID) REFERENCES salaries(id)
+  FOREIGN KEY (salaryID) REFERENCES salaries(id)
 );
 
 INSERT INTO OAFProgramPricings (feeName, FeeValue, FeeRecurrsions) VALUES  ("Legal", 5710, 1);
@@ -192,22 +192,22 @@ INSERT INTO jobPostingFees (service, cost) VALUES ("Workable", 198);
 INSERT INTO jobPostingFees (service, cost) VALUES ("Proven", 203);
 INSERT INTO jobPostingFees (service, cost) VALUES ("ZipRecruiter", 178);
 
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Position Description", 2, 1);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Posting & Marketing", 5, 1);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Resume Screening", 15, 1);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Internal meetings & Phone Screening", 20, 1);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Position Description", 2, 2);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Interviewing", 24, 2);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("OnBoarding", "Technical Training", 20, 2);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("OnBoarding", "Orientation", 2, 3);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("Exit", "Conducting Exit Interview", 2, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("Exit", "Completing Exit Paperwork", 2, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Position Description", 2, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "References, Background and Certification/ Degree checks", 4, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Interviewing", 12, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Benefits Packages, Relocation Coordination", 2, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("OnBoarding", "Orientation", 5, 4);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Interviewing", 9, 5);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Overtime to Cover Employee Vacancy", 64, 6);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("RnH", "Interviewing", 9, 6);
-INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, titleID) VALUES ("OnBoarding", "Technical Training", 30, 6);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Position Description", 2, 1);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Posting & Marketing", 5, 1);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Resume Screening", 15, 1);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Internal meetings & Phone Screening", 20, 1);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Position Description", 2, 2);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Interviewing", 24, 2);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("OnBoarding", "Technical Training", 20, 2);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("OnBoarding", "Orientation", 2, 3);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("Exit", "Conducting Exit Interview", 2, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("Exit", "Completing Exit Paperwork", 2, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Position Description", 2, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "References, Background and Certification/ Degree checks", 4, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Interviewing", 12, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Benefits Packages, Relocation Coordination", 2, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("OnBoarding", "Orientation", 5, 4);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Interviewing", 9, 5);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Overtime to Cover Employee Vacancy", 64, 6);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("RnH", "Interviewing", 9, 6);
+INSERT INTO internalPersonnelTasks (taskGroup, name, hoursSpent, salaryID) VALUES ("OnBoarding", "Technical Training", 30, 6);

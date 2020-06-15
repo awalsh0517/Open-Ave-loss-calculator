@@ -4,7 +4,7 @@ const internalPersonnelTasks = (connection, Sequelize, salaries) => {
     taskGroup: { type: Sequelize.ENUM('Exit', 'RnH', 'OnBoarding') },
     name: { type: Sequelize.STRING },
     hoursSpent: { type: Sequelize.INTEGER },
-    titleId: { type: Sequelize.INTEGER, references: { model: salaries, key: 'id' } }
+    salaryId: { type: Sequelize.INTEGER, references: { model: salaries, key: 'id' } }
   }, {
     paranoid: true,
   })
