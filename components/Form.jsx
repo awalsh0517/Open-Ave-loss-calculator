@@ -2,6 +2,29 @@ import React from 'react'
 import Input from './Input'
 import viewKeys from './displayViewKeys'
 
+const companyIndustryOptions = [
+  {
+    value: 'Finance/Banking',
+    labelText: 'Finance/Banking',
+  },
+  {
+    value: 'Scientific',
+    labelText: 'Scientific',
+  },
+  {
+    value: 'Engineering',
+    labelText: 'Engineering',
+  },
+  {
+    value: 'IT/Information Systems/Data Processing',
+    labelText: 'IT/Information Systems/Data Processing',
+  },
+  {
+    value: 'Sales/Marketing',
+    labelText: 'Sales/Marketing',
+  },
+]
+
 export default ({ handleChangeView, state, dispatch }) => {
   const handleNextPageClick = () => {
     handleChangeView(viewKeys.FORM2)
@@ -57,8 +80,9 @@ export default ({ handleChangeView, state, dispatch }) => {
           id="company_industry"
           labelText="Company Industry"
           name="companyIndustry"
+          type="dropdown"
           value={state.inputs.companyIndustry}
-          placeholder="example: Ecommerce"
+          options={companyIndustryOptions}
         />
         <Input
           dispatch={dispatch}
@@ -71,15 +95,23 @@ export default ({ handleChangeView, state, dispatch }) => {
         <Input
           dispatch={dispatch}
           id="residence_degree"
-          labelText="Residence Degree"
+          labelText="Expert in Residence Degree"
           name="residenceDegree"
           value={state.inputs.residenceDegree}
           placeholder="example: Computer Science"
         />
         <Input
           dispatch={dispatch}
+          id="job_title"
+          labelText="Expert in Residence Job Title"
+          name="jobTitle"
+          value={state.inputs.jobTitle}
+          placeholder="example: Software Developer Expert in Residence"
+        />
+        <Input
+          dispatch={dispatch}
           id="occupational_specialty"
-          labelText="Occupational Specialty"
+          labelText="Expert in Residence Occupational Specialty"
           name="occupationalSpecialty"
           value={state.inputs.occupationalSpecialty}
           placeholder="example: Front-end Engineer"

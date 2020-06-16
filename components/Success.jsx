@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Axios from 'axios'
 import viewKeys from './displayViewKeys'
 
 import { calculateSavings } from '../utils/calculations'
@@ -15,6 +16,22 @@ export default ({ handleChangeView, state }) => {
 
   useEffect(() => {
     async function calculateTotal() {
+      await Axios.post('http://localhost:1337/userInputs', {
+        userFullName: state.inputs.name,
+        userEmail: state.inputs.email,
+        timePeriodStart: state.inputs.startDate,
+        timePeriodEnd: state.inputs.endDate,
+        companyIndustry: state.inputs.companyIndustry,
+        DOLAnnualSalary: state.inputs.dolAnnualSalary,
+        EIRDegree: state.inputs.residenceDegree,
+        EIRJobTitle: state.inputs.occupationalSpecialty,
+        EIROccSpec: state.inputs.occupationalSpecialty,
+        laborNAICSCode: state.inputs.laborNaicsCode,
+        OESSOCCode: state.inputs.oesSocCode,
+        isExternalRecruiterUsed: state.inputs.corporateRecruiter,
+        isOfferedSigningBonus: state.inputs.signOnBonus,
+        isOfferedRelocationBonus: state.inputs.relocationBonus,
+      })
       const {
         total,
         ExitDirectCost,
