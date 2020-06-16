@@ -1,9 +1,26 @@
 import React from 'react'
+import Axios from 'axios'
 import viewKeys from './displayViewKeys'
 
 
 export default ({ handleChangeView, state }) => {
-  const handleNextPageClick = () => {
+  const handleNextPageClick = async () => {
+    await Axios.post('http://localhost:1337/userInputs', {
+      name: state.inputs.name,
+      email: state.inputs.email,
+      timeStart: state.inputs.startDate,
+      timeEnd: state.inputs.endDate,
+      companyIndustry: state.inputs.companyIndustry,
+      annualSalaryDOL: state.inputs.dolAnnualSalary,
+      eirDegree: state.inputs.residenceDegree,
+      eirJobTitle: state.inputs.occupationalSpecialty,
+      eirOccupationalSpecialty: state.inputs.occupationalSpecialty,
+      laborNaicsCode: state.inputs.laborNaicsCode,
+      oesSocCode: state.inputs.oesSocCode,
+      isExternalRecruiter: state.inputs.corporateRecruiter,
+      isSignOnBonus: state.inputs.signOnBonus,
+      isRelocationBonusOffered: state.inputs.relocationBonus,
+    })
     handleChangeView(viewKeys.SUCCESS)
   }
   const handlePreviousPageClick = () => {
