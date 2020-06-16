@@ -1,26 +1,9 @@
 import React from 'react'
-import Axios from 'axios'
 import viewKeys from './displayViewKeys'
 
 
 export default ({ handleChangeView, state }) => {
   const handleNextPageClick = async () => {
-    await Axios.post('http://localhost:1337/userInputs', {
-      name: state.inputs.name,
-      email: state.inputs.email,
-      timeStart: state.inputs.startDate,
-      timeEnd: state.inputs.endDate,
-      companyIndustry: state.inputs.companyIndustry,
-      annualSalaryDOL: state.inputs.dolAnnualSalary,
-      eirDegree: state.inputs.residenceDegree,
-      eirJobTitle: state.inputs.occupationalSpecialty,
-      eirOccupationalSpecialty: state.inputs.occupationalSpecialty,
-      laborNaicsCode: state.inputs.laborNaicsCode,
-      oesSocCode: state.inputs.oesSocCode,
-      isExternalRecruiter: state.inputs.corporateRecruiter,
-      isSignOnBonus: state.inputs.signOnBonus,
-      isRelocationBonusOffered: state.inputs.relocationBonus,
-    })
     handleChangeView(viewKeys.SUCCESS)
   }
   const handlePreviousPageClick = () => {
@@ -65,11 +48,15 @@ export default ({ handleChangeView, state }) => {
             <span className="review_text review_response">{state.inputs.dolAnnualSalary}</span>
           </div>
           <div className="reviewField">
-            <span className="review_text">Residence Degree:</span>
+            <span className="review_text">Expert in Residence Degree:</span>
             <span className="review_text review_response">{state.inputs.residenceDegree}</span>
           </div>
           <div className="reviewField">
-            <span className="review_text">Occupational Specialty:</span>
+            <span className="review_text">Expert in Resience Job Title:</span>
+            <span className="review_text review_response">{state.inputs.jobTitle}</span>
+          </div>
+          <div className="reviewField">
+            <span className="review_text">Expert in Residence Occupational Specialty:</span>
             <span className="review_text review_response">{state.inputs.occupationalSpecialty}</span>
           </div>
           <div className="reviewField">

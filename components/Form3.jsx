@@ -94,7 +94,6 @@ export default ({ handleChangeView, state, dispatch }) => {
           type="dropdown"
           value={state.inputs.corporateRecruiterPersonnel}
           options={corporateRecruiterPersonnelOptions}
-
         />
         <Input
           dispatch={dispatch}
@@ -104,7 +103,6 @@ export default ({ handleChangeView, state, dispatch }) => {
           type="dropdown"
           value={state.inputs.directorEngineering}
           options={directorEngineeringOptions}
-
         />
         <Input
           dispatch={dispatch}
@@ -114,7 +112,6 @@ export default ({ handleChangeView, state, dispatch }) => {
           type="dropdown"
           value={state.inputs.itTechnician}
           options={itTechnicianOptions}
-
         />
         <Input
           dispatch={dispatch}
@@ -124,7 +121,6 @@ export default ({ handleChangeView, state, dispatch }) => {
           type="dropdown"
           value={state.inputs.humanResourcesManager}
           options={humanResourcesManagerOptions}
-
         />
         <Input
           dispatch={dispatch}
@@ -134,7 +130,6 @@ export default ({ handleChangeView, state, dispatch }) => {
           type="dropdown"
           value={state.inputs.ceo}
           options={ceoOptions}
-
         />
         <Input
           dispatch={dispatch}
