@@ -11,77 +11,79 @@ const getAllUserInputs = async (request, response) => {
 }
 
 const postUserInputs = async (request, response) => {
-  // try {
-  const {
-    userFullName,
-    userEmail,
-    timePeriodStart,
-    timePeriodEnd,
-    companyIndustry,
-    EIROccSpec,
-    EIRJobTitle,
-    laborNAICSCode,
-    DOLAnnualSalary,
-    // DOLHourlySalary,
-    // weeklyHours,
-    OESSOCCode,
-    EIRDegree,
-    isExternalRecruiterUsed,
-    isOfferedSigningBonus,
-    isOfferedRelocationBonus,
-    // averageDaysVacant,
-    // isCorpRecuiterInvolved,
-    // isDirOfEngineeringInvolved,
-    // isItTechnicianInvolved,
-    // isHrManagerInvolved,
-    // isCeoInvolved,
-    // isPeerWorkerInvolved,
-    // estUnemployTaxInc,
-    // possibleLegalClaimsCost,
-    // travelAndRegFees,
-    // outsideTrainerCost,
-    // workShopMaterialCost,
-  } = request.body
+  try {
+    const {
+      userFullName,
+      userEmail,
+      timePeriodStart,
+      timePeriodEnd,
+      companyIndustry,
+      EIROccSpec,
+      EIRJobTitle,
+      laborNAICSCode,
+      DOLAnnualSalary,
+      OESSOCCode,
+      EIRDegree,
+      isExternalRecruiterUsed,
+      isOfferedSigningBonus,
+      isOfferedRelocationBonus,
+      averageDaysVacant,
+      isCorpRecuiterInvolved,
+      isDirOfEngineeringInvolved,
+      isItTechnicianInvolved,
+      isHrManagerInvolved,
+      isCeoInvolved,
+      isPeerWorkerInvolved,
+      estUnemployTaxInc,
+      possibleLegalClaimsCost,
+      travelAndRegFees,
+      outsideTrainerCost,
+      workShopMaterialCost,
+      staffMorale,
+      productionDelays,
+      lostCustomers,
+    } = request.body
 
-  // if (!userFullName || !userEmail) {
-  //   return response.status(400).send('Required fields are: userEmail, timePeriodStart, timePeriodEnd, companyIndustry, DOLAnnualSalary, weeklyHours, averageDaysVacant')
-  // }
+    // if (!userFullName || !userEmail) {
+    //   return response.status(400).send('Required fields are: userEmail, timePeriodStart, timePeriodEnd, companyIndustry, DOLAnnualSalary, weeklyHours, averageDaysVacant')
+    // }
 
-  const newUserInput = await models.userInputs.create({
-    userFullName,
-    userEmail,
-    timePeriodStart,
-    timePeriodEnd,
-    companyIndustry,
-    EIROccSpec,
-    EIRJobTitle,
-    laborNAICSCode,
-    DOLAnnualSalary,
-    // DOLHourlySalary,
-    // weeklyHours,
-    OESSOCCode,
-    EIRDegree,
-    isExternalRecruiterUsed,
-    isOfferedSigningBonus,
-    isOfferedRelocationBonus,
-    // averageDaysVacant,
-    // isCorpRecuiterInvolved,
-    // isDirOfEngineeringInvolved,
-    // isItTechnicianInvolved,
-    // isHrManagerInvolved,
-    // isCeoInvolved,
-    // isPeerWorkerInvolved,
-    // estUnemployTaxInc,
-    // possibleLegalClaimsCost,
-    // travelAndRegFees,
-    // outsideTrainerCost,
-    // workShopMaterialCost,
-  })
+    const newUserInput = await models.userInputs.create({
+      userFullName,
+      userEmail,
+      timePeriodStart,
+      timePeriodEnd,
+      companyIndustry,
+      EIROccSpec,
+      EIRJobTitle,
+      laborNAICSCode,
+      DOLAnnualSalary,
+      OESSOCCode,
+      EIRDegree,
+      isExternalRecruiterUsed,
+      isOfferedSigningBonus,
+      isOfferedRelocationBonus,
+      averageDaysVacant,
+      isCorpRecuiterInvolved,
+      isDirOfEngineeringInvolved,
+      isItTechnicianInvolved,
+      isHrManagerInvolved,
+      isCeoInvolved,
+      isPeerWorkerInvolved,
+      estUnemployTaxInc,
+      possibleLegalClaimsCost,
+      travelAndRegFees,
+      outsideTrainerCost,
+      workShopMaterialCost,
+      staffMorale,
+      productionDelays,
+      lostCustomers,
+    })
 
-  return response.status(201).send(newUserInput)
-  // } catch (error) {
-  //   return response.status(500).send('Unable to add new user information, please try again')
-  // }
+    return response.status(201).send(newUserInput)
+  } catch (error) {
+    return response.status(500).send('Unable to add new user information, please try again')
+  }
 }
 
 module.exports = { getAllUserInputs, postUserInputs }
