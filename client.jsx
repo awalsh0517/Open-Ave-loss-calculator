@@ -5,7 +5,6 @@ import Display from './components/Display'
 render(
   <div>
     <div id="mySidenav" className="sidenav">
-      <a href="javascript:void(0)" className="closebtn" onClick="closeNav()">&times;</a>
 
       <div id="navFormat"><a href="https://www.openavenuesfoundation.org/">Home</a></div>
       <div id="navFormat"><a href="https://www.openavenuesfoundation.org/about-us">About Us</a></div>
@@ -18,13 +17,14 @@ render(
     </div>
 
     <div className="headerFlex">
-      <span style={{ fontSize: '30px' }} onClick="openNav()" className="hamburg">&#9776;</span>
+      <span style={{ fontSize: '30px' }} className="hamburg">&#9776;</span>
 
       <img
         src="./images/NEW-OpenAvenueFOUNDATION-Logo-FullColor (1).png"
         alt="Open Avenues Foundation "
         style={{ width: '400px', height: '75px' }}
-        className="openAveLogo" />
+        className="openAveLogo"
+      />
       <div className="headerSocialWidth">
         <img alt="" src="./images/instagram-brands.svg" className="socialMedia" />
 
