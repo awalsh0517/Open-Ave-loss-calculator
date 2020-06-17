@@ -9,8 +9,6 @@ const userInputs = (connection, Sequelize) => connection.define('userInputs', {
   EIRJobTitle: { type: Sequelize.STRING },
   laborNAICSCode: { type: Sequelize.STRING },
   DOLAnnualSalary: { type: Sequelize.DECIMAL(8, 2) },
-  DOLHourlySalary: { type: Sequelize.DECIMAL(6, 2) },
-  weeklyHours: { type: Sequelize.INTEGER },
   OESSOCCode: { type: Sequelize.STRING },
   EIRDegree: { type: Sequelize.STRING },
   isExternalRecruiterUsed: { type: Sequelize.STRING },
@@ -30,6 +28,7 @@ const userInputs = (connection, Sequelize) => connection.define('userInputs', {
   travelAndRegFees: { type: Sequelize.DECIMAL(7, 2) },
   outsideTrainerCost: { type: Sequelize.DECIMAL(7, 2) },
   workShopMaterialCost: { type: Sequelize.DECIMAL(7, 2) },
+  productionDelays: { type: Sequelize.DECIMAL(7, 2) },
 }, {
   paranoid: true,
 })
