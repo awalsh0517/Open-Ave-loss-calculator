@@ -222,6 +222,43 @@ select {
   margin-bottom: 35px;
 }
 
+.summaryTitle{
+  text-align: center;
+  padding-right: 10%;
+
+
+}
+.summaryCosts{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(160, 177, 214, .3);
+  background-color: whitesmoke;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 5%;
+}
+
+.summaryTable{
+  margin: 10px 5px 30px 5px;
+  padding: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+td, th {
+  text-align: left;
+  padding: 10px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(160, 177, 214, .3);
+}
+
 /* .formCircles {
   text-align: center;
   margin-top: 10px;

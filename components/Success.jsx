@@ -84,33 +84,64 @@ export default ({ handleChangeView, state }) => {
       >
         <h1>Thank you for filling out our form.</h1>
         <h2>Here is how much you can save.</h2>
-        <h3>{`$${totalSavings}`}</h3>
+        <h1>{`$${totalSavings}`}</h1>
 
-        <h4>Summary of Costs Associate with Employee Loss</h4>
-        <h5>
-          Employee Exit - Direct Costs: $
-          {`${ExitDirectCostTotal}`}
-        </h5>
-        <h5>
-          Employee Exit - Hidden Costs: $
-          {`${ExitHiddenCostTotal}`}
-        </h5>
-        <h5>
-          Recruitment and Hiring - Direct Costs: $
-          {`${rnhDirectCostTotal}`}
-        </h5>
-        <h5>
-          Recruitment and Hiring - Hidden Costs: $
-          {`${rnhHiddenCostTotal}`}
-        </h5>
-        <h5>
-          Onboarding - Direct Costs: $
-          {`${onBoardingDirectCostTotal}`}
-        </h5>
-        <h5>
-          Onboarding - Hidden Costs: $
-          {`${onBoardingHiddenCostTotal}`}
-        </h5>
+        <div className="summaryCosts">
+          <h4 className="summaryTitle">Summary of Costs Associated with Employee Loss</h4>
+
+          <table className="summaryTable">
+            <th>Cost Categories</th>
+            <th>Estimated Cost</th>
+            <tr>
+              <td>
+                Employee Exit - Direct Costs:
+              </td>
+              <td>
+                {`$${ExitDirectCostTotal}`}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Employee Exit - Hidden Costs:
+              </td>
+              <td>
+                {`$${ExitHiddenCostTotal}`}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recruitment and Hiring - Direct Costs:
+              </td>
+              <td>
+                {`$${rnhDirectCostTotal}`}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Recruitment and Hiring - Hidden Costs:
+              </td>
+              <td>
+                {`$${rnhHiddenCostTotal}`}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Onboarding - Direct Costs:
+              </td>
+              <td>
+                {`$${onBoardingDirectCostTotal}`}
+              </td>
+            </tr>
+            <tr>
+              <td>
+                Onboarding - Hidden Costs:
+              </td>
+              <td>
+                {`$${onBoardingHiddenCostTotal}`}
+              </td>
+            </tr>
+          </table>
+        </div>
 
         <button
           className="formSubmitButton"
