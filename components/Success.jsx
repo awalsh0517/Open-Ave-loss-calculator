@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Axios from 'axios'
+import ReactToPdf from 'react-to-pdf'
 import viewKeys from './displayViewKeys'
-
 import { calculateSavings } from '../utils/calculations'
-
 
 export default ({ handleChangeView, state }) => {
   const [totalSavings, setTotalSavings] = useState(0)
@@ -47,6 +46,7 @@ export default ({ handleChangeView, state }) => {
         productionDelays: state.inputs.productionDelays,
         lostCustomers: state.inputs.lostCustomers,
       })
+
       const {
         total,
         ExitDirectCost,
@@ -68,12 +68,13 @@ export default ({ handleChangeView, state }) => {
 
     calculateTotal()
   }, [])
-  const handleNextPageClick = () => {
-    handleChangeView(viewKeys.FORM)
-  }
+
   const handlePreviousPageClick = () => {
     handleChangeView(viewKeys.REVIEW)
   }
+
+  const ref = React.createRef()
+
   return (
     <div>
       <form
@@ -82,77 +83,93 @@ export default ({ handleChangeView, state }) => {
           event.preventDefault()
         }}
       >
-        <h1>Thank you for filling out our form.</h1>
-        <h2>Here is how much you can save.</h2>
-        <h1>{`$${totalSavings}`}</h1>
+        <div ref={ref}>
+          <h1 className="noprint">Thank you for filling out our form.</h1>
+          <h2>Here is how much you can save.</h2>
+          <h1>{`$${totalSavings}`}</h1>
 
-        <div className="summaryCosts">
-          <h4 className="summaryTitle">Summary of Costs Associated with Employee Loss</h4>
+          <div className="summaryCosts">
+            <h4 className="summaryTitle">Summary of Costs Associated with Employee Loss</h4>
 
-          <table className="summaryTable">
-            <th>Cost Categories</th>
-            <th>Estimated Cost</th>
-            <tr>
-              <td>
-                Employee Exit - Direct Costs:
-              </td>
-              <td>
-                {`$${ExitDirectCostTotal}`}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Employee Exit - Hidden Costs:
-              </td>
-              <td>
-                {`$${ExitHiddenCostTotal}`}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Recruitment and Hiring - Direct Costs:
-              </td>
-              <td>
-                {`$${rnhDirectCostTotal}`}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Recruitment and Hiring - Hidden Costs:
-              </td>
-              <td>
-                {`$${rnhHiddenCostTotal}`}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Onboarding - Direct Costs:
-              </td>
-              <td>
-                {`$${onBoardingDirectCostTotal}`}
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Onboarding - Hidden Costs:
-              </td>
-              <td>
-                {`$${onBoardingHiddenCostTotal}`}
-              </td>
-            </tr>
-          </table>
+            <table className="summaryTable">
+              <thead>
+                <tr>
+                  <th>Cost Categories</th>
+                  <th>Estimated Cost</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    Employee Exit - Direct Costs:
+                  </td>
+                  <td>
+                    {`$${ExitDirectCostTotal}`}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Employee Exit - Hidden Costs:
+                  </td>
+                  <td>
+                    {`$${ExitHiddenCostTotal}`}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Recruitment and Hiring - Direct Costs:
+                  </td>
+                  <td>
+                    {`$${rnhDirectCostTotal}`}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Recruitment and Hiring - Hidden Costs:
+                  </td>
+                  <td>
+                    {`$${rnhHiddenCostTotal}`}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Onboarding - Direct Costs:
+                  </td>
+                  <td>
+                    {`$${onBoardingDirectCostTotal}`}
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    Onboarding - Hidden Costs:
+                  </td>
+                  <td>
+                    {`$${onBoardingHiddenCostTotal}`}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
+        <ReactToPdf targetRef={ref} filename="OpenAveSavings.pdf">
+          {
+            ({ toPdf }) => (
+              <button className="formSubmitButton noprint" type="button" onClick={toPdf}>Pdf</button>
+            )
+          }
+        </ReactToPdf>
+
         <button
-          className="formSubmitButton"
+          className="formSubmitButton noprint"
           type="button"
           id="submitButton"
-          onClick={handleNextPageClick}
+          onClick={window.print}
         >
           Print
         </button>
         <button
-          className="formSubmitButton"
+          className="formSubmitButton noprint"
           type="button"
           id="submitButton"
           onClick={handlePreviousPageClick}

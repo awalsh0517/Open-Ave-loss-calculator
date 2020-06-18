@@ -4,7 +4,7 @@ import Display from './components/Display'
 
 render(
   <div>
-    <div id="mySidenav" className="sidenav">
+    <div id="mySidenav" className="sidenav noprint">
 
       <div id="navFormat"><a href="https://www.openavenuesfoundation.org/">Home</a></div>
       <div id="navFormat"><a href="https://www.openavenuesfoundation.org/about-us">About Us</a></div>
@@ -17,7 +17,7 @@ render(
     </div>
 
     <div className="headerFlex">
-      <span style={{ fontSize: '30px' }} className="hamburg">&#9776;</span>
+      <span style={{ fontSize: '30px' }} className="hamburg noprint">&#9776;</span>
 
       <img
         src="./images/NEW-OpenAvenueFOUNDATION-Logo-FullColor (1).png"
@@ -25,7 +25,7 @@ render(
         style={{ width: '400px', height: '75px' }}
         className="openAveLogo"
       />
-      <div className="headerSocialWidth">
+      <div className="headerSocialWidth noprint">
         <img alt="" src="./images/instagram-brands.svg" className="socialMedia" />
 
         <img alt="" src="./images/facebook-brands.svg" className="socialMedia" />
@@ -36,7 +36,7 @@ render(
       </div>
     </div>
 
-    <div className="titleBox">
+    <div className="titleBox noprint">
       <div>
         <p>
           Find out how much you could save with
@@ -45,18 +45,18 @@ render(
       </div>
     </div>
 
-    <div className="betweenTitleAndForm">
+    <div className="betweenTitleAndForm noprint">
       <p> Give us some information about your employee and company.</p>
     </div>
 
     <Display />
 
 
-    <footer className="footer">
-      <div className="footer-text">
+    <footer className="footer noprint">
+      <div className="footer-text noprint">
         Connect with us.
       </div>
-      <div className="contact-button">
+      <div className="contact-button noprint">
         CONTACT US
       </div>
 
