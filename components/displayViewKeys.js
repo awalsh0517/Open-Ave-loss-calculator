@@ -6,4 +6,5 @@ export default {
   FORM5: 'FORM5',
   REVIEW: 'REVIEW',
   SUCCESS: 'SUCCESS',
+  SUCCESSPDF: 'SUCCESSPDF',
 }

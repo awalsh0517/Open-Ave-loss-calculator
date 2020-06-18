@@ -3,6 +3,10 @@
   .sidenav a {font-size: 18px;}
 }
 
+@media print {
+  .noprint {display: none !important;}
+}
+
 .border {
   border: 1px solid black;
 }
@@ -222,47 +226,44 @@ select {
   margin-bottom: 35px;
 }
 
-/* .formCircles {
+.summaryTitle{
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 100px;
+  padding-right: 10%;
+
+
+}
+.summaryCosts{
+  border-style: solid;
+  border-radius: 10px;
+  border-color: rgba(160, 177, 214, .3);
+  background-color: whitesmoke;
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 5%;
 }
 
-.step {
-  height: 10px;
-  width: 10px;
-  background-color: #bbbbbb;
-  border: 1px solid black;
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
+.summaryTable{
+  margin: 10px 5px 30px 5px;
+  padding: 5px;
 }
 
-.step.active {
-  opacity: 1;
+table {
+  border-collapse: collapse;
+  width: 90%;
 }
 
-.step.finish {
-  background-color: #4CAF50;
-} */
-
-/* .buttonsForForm {
-  margin-right: 9%;
-  margin-bottom: 3%;
-  overflow: auto;
-} */
-
-/* #timPeriodLabel {
-  margin-left: 4%;
+td, th {
+  text-align: left;
+  padding: 10px;
 }
 
-#startDateInput {
-  margin-left: 5%;
-  width: 140px;
+tr:nth-child(even) {
+  background-color: rgba(160, 177, 214, .3);
 }
 
-#endDateInput {
-  margin-right: 9%;
-  margin-left: 2%;
-  width: 140px;
-} */
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
